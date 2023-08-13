@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+    <link
+      rel="stylesheet"
+      href="./boot/bootstrap-5.3.1-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="stylee.css">
+  </head>
+  <body class="bg-light">   
+  
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow" >
+      <div class="container-fluid">
+        <!--start of brand-->
+        <a class="navbar-brand text-body-emphasis brandgradient" href="index.html">EMS2.0</a>
+        <!--end of brand-->
+        <!--start of toggler-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--end of toggler-->
+        <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+          <!--start of navbar items-->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link  " aria-current="page" href="dash.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="employee.html">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link  "
+                href="job.html"
+                aria-expanded="false"
+              >
+                Jobs
+              </a>
+              
+              </ul>
+            </li>
+          </ul>
+          <!--end of navbar items-->
+           <!--start of search items-->
+          <form class="d-flex gap-3 " role="search" action="index.html">
+            <div class="input-group mt-1 mb-1">
+              <input type="search" class="form-control text-light bg-light small" placeholder="search for...">
+              <button type="submit" class="btn btn-success btn-sm">
+                <i class="fas fa-search"></i></a>
+              </button>
+              
+            </div>
+            <!--end of search items-->
+          <!--start of VerticalRule-->
+          <div class="vr text-light"></div>
+          <!--end of VerticalRule-->
+          <!--start of logout-->
+          <button type="submit" class="btn btn-warning small">
+            <i class="fa-solid fa-power-off"></i>
+          </button>
+          <!--end of logout-->
+          </form>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid mt-3 ">
+        <!--start of 2 input groups-->
+        <div class="row justify-content-center ">
+          <div class="col-md-2">
+            <ul class="list-group shadow">
+                <li class="list-group-item active small" aria-current="true">Employee data</li>
+                 <a class="list-group-item list-group-item-action small "data-bs-toggle="modal" data-bs-target="#Add">Add Employee</a>
+                 <div class="modal fade" id="Add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header text-bg-dark">
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Empolyee Details</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="container-fluid">
+                          <div class="mt-2 mb-2">
+                            <input
+                              type="date"
+                              class="form-control form-control-sm"
+                              value="2009-12-09"
+                              
+                            />
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <input
+                                type="text"
+                                class="form-control form-control-sm"
+                                placeholder="First Name"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <input type="text" class="form-control form-control-sm" placeholder="last Name" />
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-6">
+                              <input
+                                type="email"
+                                class="form-control form-control-sm"
+                                placeholder="Email ID"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                placeholder="Phone Number"
+                              />
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <select
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected disabled value="-1">select A job of Empolyee</option>
+                              <option value="1">Graphic Designer</option>
+                              <option value="2">Web Designer</option>
+                              <option value="3">Interior Designer</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="container-sm d-flex gap-1 ">
+                        <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-dismiss="modal">Add Empolyee</button>
+                        <button class="btn btn-warning m-3" data-bs-dismiss="modal">close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </ul>
+                <ul class="list-group shadow mt-3">
+                    <li class="list-group-item active small" aria-current="true">Related Links</li>
+                     <a href="job.html" class="list-group-item list-group-item-action small">Jobs List</a>
+                    </ul>
+          </div>
+          <!--start of 2 input groups-->
+          <!--start of table-->
+          <div class="col-md-8">
+            <table class="table table-bordered caption-top table-sm shadow">
+                <caption class="text-bg-dark text-center rounded-top">Employees List</caption>
+                <thead class="small table-secondary" >
+                  <tr >
+                    <th scope="col">ID</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email ID</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead class="small">
+                <tbody class="small align-middle">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>741</td>
+                    <td>John Doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <!--Details-->
+                    <td><div class="modal" id="exampleModalToggle" data-bs-backdrop="static">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title  fs-5" id="exampleModalToggleLabel">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-0">
+                            <table class="table table-bordered">
+                              <tr>
+                                <th class="border-top-0">ID</th>
+                                <td class="border-top-0">1</td>
+                              </tr>
+                              <tr>
+                                <th>Empolyee ID</th>
+                                <td>7418</td>
+                              </tr>
+                              <tr>
+                                <th>First Name</th>
+                                <td>John</td>
+                              </tr>
+                              <tr>
+                                <th>Last Name</th>
+                                <td>Doe</td>
+                              </tr>
+                              <tr>
+                                 <th>Email ID</th>
+                                 <td>johndoe@gmail.com</td>
+                              </tr>
+                              <tr>
+                                 <th>Phone Number</th>
+                                 <td>741852963</td>
+                              </tr>
+                              <tr>
+                                <th>Job</th> 
+                                <td>Grafic Designer</td>
+                              </tr>
+                              <tr>
+                                <th>Joining Date</th> 
+                                <td >22nd july,2023</td>
+
+                              </tr>
+                            </table>
+                          </div>
+                          <div class="modal-footer border-top-0">
+                            <button class="btn btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Edit</button>
+                            <button type="button" class="btn btn-primary "data-bs-target="#exampleModalToggle2" data-bs-dismiss="modal">close</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" data-bs-backdrop="static">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="mt-2 mb-2">
+                                <input
+                                  type="date"
+                                  class="form-control"
+                                  value="2009-12-09"
+                                />
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="John" />
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="Doe" />
+                                </div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-6">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="johndoe@gmail.com"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    placeholder="7418529632"
+                                  />
+                                </div>
+                              </div>
+                              <div class="mt-2">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>Graphic Designer</option>
+                                  <option value="1">Web Designer</option>
+                                  <option value="2">Interior Designer</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                           <div class="container-sm d-flex gap-1 ">
+                            <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                            <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                            
+                          </div>
+                              
+                          </div>
+                        </div>
+                      
+                    </div>
+                    
+                    <a class="btn  btn-sm btn-primary form-control" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Details</a>
+                    </td>
+                    <td><!-- Button trigger modal -->
+                      <a type="button" class="btn btn-warning btn-sm form-control" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                      </a>
+                      
+                      <!-- Modal -->
+                      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header text-bg-dark">
+                              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+                                Empolyee Details
+                              </h1>
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container-fluid">
+                                <div class="mt-2 mb-2">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    value="2009-12-09"
+                                  />
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="John" />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Doe" />
+                                  </div>
+                                </div>
+                                <div class="row mt-2">
+                                  <div class="col-md-6">
+                                    <input
+                                      type="email"
+                                      class="form-control"
+                                      placeholder="johndoe@gmail.com"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      placeholder="7418529632"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-2">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Graphic Designer</option>
+                                    <option value="1">Web Designer</option>
+                                    <option value="2">Interior Designer</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="container-sm d-flex gap-1 ">
+                              <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                              <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                            </div>
+                                
+                          </div>
+                        </div>
+                      </div></td>
+                   <td><!-- Button trigger modal -->
+                    <a type="button" class="btn btn-danger form-control btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Delete
+                    </a>
+                    
+                    <!-- Modal -->
+                    <div class="modal  modal-cent " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-header border-bottom-0">
+                             <label class="fw-light fs-4">
+                              Do you Want to Delete <b>"John Doe"</b>?
+                             </label>
+                            
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          
+                          <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes!</button>
+                            <button type="button" class="btn btn-warning">Nope,Go back</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>741</td>
+                    <td>John Doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <!--Details-->
+                    <td><div class="modal" id="exampleModalToggle">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title  fs-5" id="exampleModalToggleLabel">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-0">
+                            <table class="table table-bordered">
+                              <tr>
+                                <th class="border-top-0">ID</th>
+                                <td class="border-top-0">1</td>
+                              </tr>
+                              <tr>
+                                <th>Empolyee ID</th>
+                                <td>7418</td>
+                              </tr>
+                              <tr>
+                                <th>First Name</th>
+                                <td>John</td>
+                              </tr>
+                              <tr>
+                                <th>Last Name</th>
+                                <td>Doe</td>
+                              </tr>
+                              <tr>
+                                 <th>Email ID</th>
+                                 <td>johndoe@gmail.com</td>
+                              </tr>
+                              <tr>
+                                 <th>Phone Number</th>
+                                 <td>741852963</td>
+                              </tr>
+                              <tr>
+                                <th>Job</th> 
+                                <td>Grafic Designer</td>
+                              </tr>
+                              <tr>
+                                <th>Joining Date</th> 
+                                <td >22nd july,2023</td>
+
+                              </tr>
+                            </table>
+                          </div>
+                          <div class="modal-footer border-top-0">
+                            <button class="btn btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Edit</button>
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary ">close</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="mt-2 mb-2">
+                                <input
+                                  type="date"
+                                  class="form-control"
+                                  value="2009-12-09"
+                                />
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="John" />
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="Doe" />
+                                </div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-6">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="johndoe@gmail.com"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    placeholder="7418529632"
+                                  />
+                                </div>
+                              </div>
+                              <div class="mt-2">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>Graphic Designer</option>
+                                  <option value="1">Web Designer</option>
+                                  <option value="2">Interior Designer</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                           <div class="container-sm d-flex gap-1 ">
+                            <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                            <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                          </div>
+                              
+                          </div>
+                        </div>
+                      
+                    </div>
+                    
+                    <a class="btn  btn-sm btn-primary form-control" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Details</a>
+                    </td>
+                    <td><!-- Button trigger modal -->
+                      <a type="button" class="btn btn-warning btn-sm form-control" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                      </a>
+                      
+                      <!-- Modal -->
+                      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header text-bg-dark">
+                              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+                                Empolyee Details
+                              </h1>
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container-fluid">
+                                <div class="mt-2 mb-2">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    value="2009-12-09"
+                                  />
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="John" />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Doe" />
+                                  </div>
+                                </div>
+                                <div class="row mt-2">
+                                  <div class="col-md-6">
+                                    <input
+                                      type="email"
+                                      class="form-control"
+                                      placeholder="johndoe@gmail.com"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      placeholder="7418529632"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-2">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Graphic Designer</option>
+                                    <option value="1">Web Designer</option>
+                                    <option value="2">Interior Designer</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="container-sm d-flex gap-1 ">
+                              <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                              <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                            </div>
+                                
+                          </div>
+                        </div>
+                      </div></td>
+                   <td><!-- Button trigger modal -->
+                    <a type="button" class="btn btn-danger form-control btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Delete
+                    </a>
+                    
+                    <!-- Modal -->
+                    <div class="modal  modal-cent " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-header border-bottom-0">
+                             <label class="fw-light fs-4">
+                              Do you Want to Delete <b>"John Doe"</b>?
+                             </label>
+                            
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          
+                          <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes!</button>
+                            <button type="button" class="btn btn-warning">Nope,Go back</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>741</td>
+                    <td>John Doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <!--Details-->
+                    <td><div class="modal" id="exampleModalToggle">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title  fs-5" id="exampleModalToggleLabel">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-0">
+                            <table class="table table-bordered">
+                              <tr>
+                                <th class="border-top-0">ID</th>
+                                <td class="border-top-0">1</td>
+                              </tr>
+                              <tr>
+                                <th>Empolyee ID</th>
+                                <td>7418</td>
+                              </tr>
+                              <tr>
+                                <th>First Name</th>
+                                <td>John</td>
+                              </tr>
+                              <tr>
+                                <th>Last Name</th>
+                                <td>Doe</td>
+                              </tr>
+                              <tr>
+                                 <th>Email ID</th>
+                                 <td>johndoe@gmail.com</td>
+                              </tr>
+                              <tr>
+                                 <th>Phone Number</th>
+                                 <td>741852963</td>
+                              </tr>
+                              <tr>
+                                <th>Job</th> 
+                                <td>Grafic Designer</td>
+                              </tr>
+                              <tr>
+                                <th>Joining Date</th> 
+                                <td >22nd july,2023</td>
+
+                              </tr>
+                            </table>
+                          </div>
+                          <div class="modal-footer border-top-0">
+                            <button class="btn btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Edit</button>
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary ">close</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header text-bg-dark">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Empolyee Details</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="mt-2 mb-2">
+                                <input
+                                  type="date"
+                                  class="form-control"
+                                  value="2009-12-09"
+                                />
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="John" />
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="Doe" />
+                                </div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-6">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="johndoe@gmail.com"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    placeholder="7418529632"
+                                  />
+                                </div>
+                              </div>
+                              <div class="mt-2">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>Graphic Designer</option>
+                                  <option value="1">Web Designer</option>
+                                  <option value="2">Interior Designer</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                           <div class="container-sm d-flex gap-1 ">
+                            <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                            <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                          </div>
+                              
+                          </div>
+                        </div>
+                      
+                    </div>
+                    
+                    <a class="btn  btn-sm btn-primary form-control" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Details</a>
+                    </td>
+                    <td><!-- Button trigger modal -->
+                      <a type="button" class="btn btn-warning btn-sm form-control" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                      </a>
+                      
+                      <!-- Modal -->
+                      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header text-bg-dark">
+                              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+                                Empolyee Details
+                              </h1>
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container-fluid">
+                                <div class="mt-2 mb-2">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    value="2009-12-09"
+                                  />
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="John" />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Doe" />
+                                  </div>
+                                </div>
+                                <div class="row mt-2">
+                                  <div class="col-md-6">
+                                    <input
+                                      type="email"
+                                      class="form-control"
+                                      placeholder="johndoe@gmail.com"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      placeholder="7418529632"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-2">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Graphic Designer</option>
+                                    <option value="1">Web Designer</option>
+                                    <option value="2">Interior Designer</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="container-sm d-flex gap-1 ">
+                              <button type="button" class="btn btn-success w-100 m-3 gap-0" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Update Empolyee</button>
+                              <button type="button" class="btn btn-warning m-3"data-bs-dismiss="modal">Discard</button>
+                            </div>
+                                
+                          </div>
+                        </div>
+                      </div></td>
+                   <td><!-- Button trigger modal -->
+                    <a type="button" class="btn btn-danger form-control btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Delete
+                    </a>
+                    
+                    <!-- Modal -->
+                    <div class="modal  modal-cent " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-header border-bottom-0">
+                             <label class="fw-light fs-4">
+                              Do you Want to Delete <b>"John Doe"</b>?
+                             </label>
+                            
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          
+                          <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes!</button>
+                            <button type="button" class="btn btn-warning">Nope,Go back</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  </tr>
+                  
+
+                </tbody>
+              </table>
+          </div>
+          <!--End of table-->
+        </div>
+      </div>
+      <script src="./boot/bootstrap-5.3.1-dist/js/bootstrap.bundle.js"></script>
+</body>

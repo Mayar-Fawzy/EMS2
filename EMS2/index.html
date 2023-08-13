@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./boot/bootstrap-5.3.1-dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <!--shadow-->
+          <div class="card mt-4 shadow">
+            <div class="card-header text-bg-primary">login as admin</div>
+            <div class="card-body">
+              <form action="dash.html">
+                <div class="form-floating mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder=" "
+                    id="username"
+                    autofocus
+                  />
+                  <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-4">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder=" "
+                    id="pass"
+                  />
+                  <label for="pass">Password</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="ch" />
+                  <label for="ch">Remember me</label>
+                </div>
+                <div class="d-grid mt-4">
+                  <button type="submit" class="btn btn-success">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login as admin
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./boot/bootstrap-5.3.1-dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
